@@ -1,0 +1,28 @@
+=== npm install @deepseek-ai/dsh@0.1.0-rc.8 ===
+2026-08-27T09:20:50Z
+node v22.23.1 / npm 10.9.8 / Darwin 24.6.0 arm64
+NODE_OPTIONS=<unset>
+registry=https://registry.npmjs.org/
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+
+added 454 packages in 12m
+      739.73 real       683.61 user        17.77 sys
+          2887499776  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              454492  page reclaims
+                  61  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                 571  messages sent
+                 616  messages received
+                   0  signals received
+                4539  voluntary context switches
+              717477  involuntary context switches
+       8900274164427  instructions retired
+       2102545621641  cycles elapsed
+          3942433024  peak memory footprint
+npm exit status: 0
+0.1.0-rc.8

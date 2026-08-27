@@ -2,3 +2,4 @@ envs/
 node_modules/
 *.tgz
 .DS_Store
+fixtures/snapshots/home-chain-*.tar.gz

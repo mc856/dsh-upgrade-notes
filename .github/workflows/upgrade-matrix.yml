@@ -1,0 +1,57 @@
+name: upgrade-matrix-linux
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['docs/**', '*.md']
+  workflow_dispatch:
+
+jobs:
+  chain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install GNU time
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq time zstd
+
+      - name: Pre-create the workspace paths recorded inside the committed snapshot
+        run: |
+          tar -xzOf fixtures/snapshots/home-0.1.0-rc.7.tar.gz ./storages/workspace.json \
+            | python3 -c "import json,sys; d=json.load(sys.stdin); [print(w['path']) for w in d['tables']['workspaces'].values()]" \
+            | while read -r p; do
+                sudo mkdir -p "$p"
+                top="/$(echo "$p" | cut -d/ -f2)"
+                sudo chown -R "$USER" "$top"
+              done
+
+      - name: Install dsh tags into isolated prefixes
+        run: |
+          for v in 0.1.0-rc.7 0.1.0-rc.8 0.1.1-rc.1 0.1.1-rc.2; do
+            ./fixtures/install-tag.sh "$v" linux
+          done
+
+      - name: Upgrade chain against committed rc.7 fixture home
+        run: |
+          ./fixtures/upgrade-hop.sh 0.1.0-rc.7        0.1.0-rc.8 4501 linux
+          ./fixtures/upgrade-hop.sh chain-0.1.0-rc.8  0.1.1-rc.1 4502 linux
+          ./fixtures/upgrade-hop.sh chain-0.1.1-rc.1  0.1.1-rc.2 4503 linux
+
+      - name: Downgrade read test (rc.2 home opened by rc.7)
+        run: ./fixtures/upgrade-hop.sh chain-0.1.1-rc.2 0.1.0-rc.7 4504 linux
+
+      - name: Print summaries
+        if: always()
+        run: cat logs/linux/*.summary.json || true
+
+      - name: Upload raw logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-logs
+          path: logs/linux/

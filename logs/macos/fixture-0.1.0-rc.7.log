@@ -6,3 +6,10 @@ dsh web: http://127.0.0.1:4478
 [fixture] session.create -> {"type":"server-response","rpcId":"fx-27370","result":{"ok":true,"value":{"sessionId":"session-5984ed37-d361-4338-82a8-672b62545705","agentPreset":"standard"}}}
 [fixture] session.prompt -> {"type":"server-response","rpcId":"fx-32162","result":{"ok":true,"value":{"accepted":true}}}
 [fixture] session file: 
+[fixture] session log settled at 0 bytes
+total 8
+drwxr-xr-x@ 3 junliu  staff   96 Aug 27 16:53 .
+drwxr-xr-x@ 5 junliu  staff  160 Aug 27 16:53 ..
+-rw-------@ 1 junliu  staff   29 Aug 27 16:53 hello.txt
+[fixture] hello.txt: hello from 0.1.0-rc.7 fixture
+[fixture] done: sessionId=session-5984ed37-d361-4338-82a8-672b62545705 workspaceId=9bd1655c-9588-408a-9e6d-a4b85b4f4844

@@ -18,8 +18,12 @@ mkdir -p "$ENV_DIR/app" "$ENV_DIR/home" "$(dirname "$LOG")"
 } | tee "$LOG"
 
 # /usr/bin/time -l (macOS) / -v (Linux) records the npm process peak RSS —
-# the process that the community OOM reports point at.
-if [ "$(uname -s)" = "Darwin" ]; then TIME_CMD=(/usr/bin/time -l); else TIME_CMD=(/usr/bin/time -v); fi
+# the process that the community OOM reports point at. Degrade gracefully when
+# GNU time is absent (e.g. stock ubuntu CI runners without `apt install time`).
+TIME_CMD=()
+if [ "$(uname -s)" = "Darwin" ]; then TIME_CMD=(/usr/bin/time -l)
+elif [ -x /usr/bin/time ]; then TIME_CMD=(/usr/bin/time -v)
+else echo "note: /usr/bin/time not available; no peak-RSS measurement" | tee -a "$LOG"; fi
 
 "${TIME_CMD[@]}" npm install --prefix "$ENV_DIR/app" --no-fund --no-audit \
   "@deepseek-ai/dsh@$VER" 2>&1 | tee -a "$LOG"
