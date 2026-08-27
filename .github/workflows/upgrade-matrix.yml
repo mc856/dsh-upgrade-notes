@@ -30,7 +30,28 @@ jobs:
                 sudo chown -R "$USER" "$top"
               done
 
-      - name: Install dsh tags into isolated prefixes
+      # First run 2026-08-27 hit the exact community OOM (#3727/#3812 pattern):
+      # npm's dependency-tree resolution aborts at the default ~2GB V8 old-space
+      # on this 7GB runner (Mark-Compact ~2015MB -> exit 134). Keep that as a
+      # recorded reproduction, then install with the community workaround.
+      - name: Reproduce community install OOM (default Node heap)
+        run: |
+          set +e
+          mkdir -p logs/linux /tmp/oom-repro
+          /usr/bin/time -v npm install --prefix /tmp/oom-repro --no-fund --no-audit \
+            "@deepseek-ai/dsh@0.1.0-rc.7" 2>&1 | tee logs/linux/oom-repro-default-heap.log
+          code=${PIPESTATUS[0]}
+          rm -rf /tmp/oom-repro
+          if [ "$code" -ne 0 ]; then
+            echo "reproduced: npm exited $code under the default heap" | tee -a logs/linux/oom-repro-default-heap.log
+          else
+            echo "did not reproduce on this runner" | tee -a logs/linux/oom-repro-default-heap.log
+          fi
+          exit 0
+
+      - name: Install dsh tags into isolated prefixes (community NODE_OPTIONS workaround)
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
         run: |
           for v in 0.1.0-rc.7 0.1.0-rc.8 0.1.1-rc.1 0.1.1-rc.2; do
             ./fixtures/install-tag.sh "$v" linux
