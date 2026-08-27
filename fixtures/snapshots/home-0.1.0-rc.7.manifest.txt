@@ -1,0 +1,15 @@
+./
+./settings.yaml
+./storages/
+./sessions/
+./profiles/
+./profiles/web/
+./profiles/web/cordis.patch.yml
+./profiles/web/package.json
+./profiles/web/cordis.yml
+./profiles/web/pnpm-workspace.yaml
+./sessions/--Users-junliu-Documents-code-github-dsh-upgrade-notes-envs-0.1.0-rc.7-workspace--/
+./sessions/--Users-junliu-Documents-code-github-dsh-upgrade-notes-envs-0.1.0-rc.7-workspace--/session-5984ed37-d361-4338-82a8-672b62545705/
+./sessions/--Users-junliu-Documents-code-github-dsh-upgrade-notes-envs-0.1.0-rc.7-workspace--/session-5984ed37-d361-4338-82a8-672b62545705/session.jsonl.zstd
+./storages/workspace.json
+./storages/session_projcache.json

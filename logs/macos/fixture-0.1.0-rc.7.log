@@ -1,0 +1,8 @@
+[fixture] === make-fixture 0.1.0-rc.7 on port 4478 ===
+2026-08-27T08:53:28Z
+dsh web: http://127.0.0.1:4478
+[fixture] server up (pid 989)
+[fixture] workspace.create -> {"type":"server-response","rpcId":"fx-17930","result":{"ok":true,"value":{"workspace":{"workspaceId":"9bd1655c-9588-408a-9e6d-a4b85b4f4844","path":"/Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.7/workspace","title":"workspace","sessionIds":[],"createdAt":"2026-08-27T08:53:30.974Z","updatedAt":"2026-08-27T08:53:30.974Z"},"created":true}}}
+[fixture] session.create -> {"type":"server-response","rpcId":"fx-27370","result":{"ok":true,"value":{"sessionId":"session-5984ed37-d361-4338-82a8-672b62545705","agentPreset":"standard"}}}
+[fixture] session.prompt -> {"type":"server-response","rpcId":"fx-32162","result":{"ok":true,"value":{"accepted":true}}}
+[fixture] session file: 
