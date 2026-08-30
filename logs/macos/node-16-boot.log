@@ -1,0 +1,10 @@
+file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.1-rc.2/app/node_modules/@deepseek-ai/dsh-app-boot/lib/index.js:4
+import { parseEnv } from "node:util";
+         ^^^^^^^^
+SyntaxError: The requested module 'node:util' does not provide an export named 'parseEnv'
+    at ModuleJob._instantiate (node:internal/modules/esm/module_job:123:21)
+    at async ModuleJob.run (node:internal/modules/esm/module_job:189:5)
+    at async Promise.all (index 0)
+    at async ESMLoader.import (node:internal/modules/esm/loader:530:24)
+    at async loadESM (node:internal/process/esm_loader:91:5)
+    at async handleMainPromise (node:internal/modules/run_main:65:12)

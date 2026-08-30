@@ -1,0 +1,36 @@
+file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh-app-boot/lib/index.js:1511
+		throw new Error(`${binName}: ${stage}: ${detail}${stack}`, { cause });
+		      ^
+
+Error: dsh: plugin tree failed to load: failed to apply loader entry workspace (@deepseek-ai/dsh-workspace): session database at "/Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/sessions.db" has schema version 17, incompatible with this build (20)
+Error: session database at "/Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/sessions.db" has schema version 17, incompatible with this build (20)
+    at configureDatabase (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:647:44)
+    at openDatabase (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:616:3)
+    at SqliteStore.openDb (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:934:19)
+    at async SqliteStore.observe (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:1097:3)
+    at async SqliteStore.list (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:1057:3)
+    at async [cordis.init] (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh-workspace/lib/index.js:324:65)
+    at async Fiber._reload (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/cordis/lib/index.js:1355:5)
+    at boot (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh-app-boot/lib/index.js:1511:9)
+    at async runProfile (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh/lib/profile-boot-BTzzdrGY.js:261:14)
+    at async file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh/lib/bin.js:130:3 {
+  [cause]: Error: failed to apply loader entry workspace (@deepseek-ai/dsh-workspace): session database at "/Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/sessions.db" has schema version 17, incompatible with this build (20)
+      at updateError (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/cordis-plugin-loader/lib/index.js:309:9)
+      at Entry._await (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/cordis-plugin-loader/lib/index.js:516:10)
+      at async Promise.allSettled (index 91)
+      at async Proxy.await (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/cordis-plugin-loader/lib/index.js:192:22)
+      at async boot (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh-app-boot/lib/index.js:1501:3)
+      at async runProfile (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh/lib/profile-boot-BTzzdrGY.js:261:14)
+      at async file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh/lib/bin.js:130:3 {
+    [cause]: Error: session database at "/Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/sessions.db" has schema version 17, incompatible with this build (20)
+        at configureDatabase (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:647:44)
+        at openDatabase (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:616:3)
+        at SqliteStore.openDb (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:934:19)
+        at async SqliteStore.observe (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:1097:3)
+        at async SqliteStore.list (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.8/home-sqlite17/profiles/web/node_modules/@deepseek-ai/dsh-session-persistence-sqlite/lib/index.js:1057:3)
+        at async [cordis.init] (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/dsh-workspace/lib/index.js:324:65)
+        at async Fiber._reload (file:///Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.2-alpha.2/app/node_modules/@deepseek-ai/cordis/lib/index.js:1355:5)
+  }
+}
+
+Node.js v22.23.1

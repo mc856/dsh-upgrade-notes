@@ -1,0 +1,23 @@
+dsh: initialized profile web at /Users/junliu/Documents/code/github/dsh-upgrade-notes/envs/0.1.0-rc.7/home-sqlite/profiles/web
+Progress: resolved 1, reused 0, downloaded 0, added 0
+
+   ╭───────────────────────────────────────────────╮
+   │                                               │
+   │      Update available! 11.9.0 → 11.24.0.      │
+   │     Changelog: https://pnpm.io/v/11.24.0      │
+   │   To update, run: corepack use pnpm@11.24.0   │
+   │                                               │
+   ╰───────────────────────────────────────────────╯
+
+Progress: resolved 3, reused 0, downloaded 0, added 0
+[WARN] Issues with peer dependencies found. Run "pnpm peers check" to list them.
+
+dependencies:
++ @deepseek-ai/dsh-session-persistence-sqlite 0.1.0-rc.7
+
+Packages: +4
+++++
+Progress: resolved 4, reused 0, downloaded 2, added 2
+Progress: resolved 4, reused 0, downloaded 4, added 4, done
+Done in 4.1s using pnpm v11.9.0
+dsh: warning: @deepseek-ai/dsh-session-persistence-sqlite declares no dsh.bundle — installed as a plain dependency, not a profile layer (a later update that gains one activates it automatically)
