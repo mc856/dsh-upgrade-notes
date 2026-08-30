@@ -1,1 +1,27 @@
 === cold-cache npx @deepseek-ai/dsh@latest --version (19:19:55Z) ===
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+0.1.1-rc.2
+npm notice
+npm notice New major version of npm available! 10.9.8 -> 12.0.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.0.2
+npm notice To update run: npm install -g npm@12.0.2
+npm notice
+      905.54 real       839.63 user        20.06 sys
+          3535273984  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              355789  page reclaims
+                  54  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                1181  messages sent
+               21222  messages received
+                   0  signals received
+                1577  voluntary context switches
+              983119  involuntary context switches
+       8821005156922  instructions retired
+       2091875020493  cycles elapsed
+          3606390784  peak memory footprint
+exit=0
